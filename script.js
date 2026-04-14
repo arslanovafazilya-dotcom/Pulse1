@@ -1,45 +1,37 @@
-// 🔥 ВСТАВЬ СВОЙ FIREBASE CONFIG
-const firebaseConfig = {
-  apiKey: "ТВОЙ_KEY",
-  authDomain: "ТВОЙ_DOMAIN",
-  databaseURL: "ТВОЙ_URL",
-  projectId: "ТВОЙ_ID",
+let votes = JSON.parse(localStorage.getItem("votes")) || {
+  joy: 0,
+  calm: 0,
+  sad: 0,
+  anger: 0
 };
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
-
-const ref = db.ref("votes");
-
-// голосование
 function vote(type) {
-  ref.child(type).transaction(value => (value || 0) + 1);
+  votes[type]++;
+
+  let total =
+    votes.joy + votes.calm + votes.sad + votes.anger;
+
+  let joy = Math.round((votes.joy / total) * 100) || 0;
+  let calm = Math.round((votes.calm / total) * 100) || 0;
+  let sad = Math.round((votes.sad / total) * 100) || 0;
+  let anger = Math.round((votes.anger / total) * 100) || 0;
+
+  document.getElementById("joyBar").style.width = joy + "%";
+  document.getElementById("calmBar").style.width = calm + "%";
+  document.getElementById("sadBar").style.width = sad + "%";
+  document.getElementById("angerBar").style.width = anger + "%";
+
+  document.getElementById("joyText").innerText = joy + "%";
+  document.getElementById("calmText").innerText = calm + "%";
+  document.getElementById("sadText").innerText = sad + "%";
+  document.getElementById("angerText").innerText = anger + "%";
+
+  localStorage.setItem("votes", JSON.stringify(votes));
 }
 
-// обновление в реальном времени
-ref.on("value", snapshot => {
-  const data = snapshot.val() || { joy:0, calm:0, sad:0, anger:0 };
-
-  const total = data.joy + data.calm + data.sad + data.anger;
-
-  const joyP = total ? (data.joy / total) * 100 : 0;
-  const calmP = total ? (data.calm / total) * 100 : 0;
-  const sadP = total ? (data.sad / total) * 100 : 0;
-  const angerP = total ? (data.anger / total) * 100 : 0;
-
-  document.getElementById("joyBar").style.height = joyP + "%";
-  document.getElementById("calmBar").style.height = calmP + "%";
-  document.getElementById("sadBar").style.height = sadP + "%";
-  document.getElementById("angerBar").style.height = angerP + "%";
-
-  document.getElementById("stats").innerHTML = `
-    ${joyP.toFixed(0)}% Радость |
-    ${calmP.toFixed(0)}% Спокойствие |
-    ${sadP.toFixed(0)}% Грусть |
-    ${angerP.toFixed(0)}% Гнев
-  `;
-});
-
+// загрузка при старте
+vote("joy");
+votes.joy--;
 // день недели
 const days = ["ВС","ПН","ВТ","СР","ЧТ","ПТ","СБ"];
 document.getElementById("day").innerText =
