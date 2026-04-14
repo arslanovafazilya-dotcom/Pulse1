@@ -1,59 +1,482 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Emotion Stats</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
+import group30 from "./group-30.png";
+import image from "./image.svg";
+import rectangle4 from "./rectangle-4.svg";
+import rectangle5 from "./rectangle-5.svg";
+import star1 from "./star-1.svg";
+import subtract from "./subtract.svg";
+import subtract2 from "./subtract-2.svg";
+import subtract3 from "./subtract-3.svg";
+import subtract4 from "./subtract-4.svg";
+import vector from "./vector.svg";
+import vector1 from "./vector-1.svg";
+import vector2 from "./vector-2.svg";
+import vector3 from "./vector-3.svg";
+import vector32 from "./vector-3-2.svg";
+import vector4 from "./vector-4.svg";
+import vector42 from "./vector-4-2.svg";
+import vector5 from "./vector-5.svg";
+import vector52 from "./vector-5-2.svg";
+import vector6 from "./vector-6.svg";
+import vector62 from "./vector-6-2.svg";
+import vector7 from "./vector-7.svg";
+import vector8 from "./vector-8.svg";
+import vector9 from "./vector-9.svg";
+import vector92 from "./vector-9-2.svg";
+import vector10 from "./vector-10.svg";
+import vector102 from "./vector-10-2.svg";
+import vector11 from "./vector-11.svg";
+import vector12 from "./vector-12.svg";
+import vector13 from "./vector-13.svg";
+import vector14 from "./vector-14.svg";
+import vector142 from "./vector-14-2.svg";
+import vector15 from "./vector-15.svg";
+import vector152 from "./vector-15-2.svg";
+import vector16 from "./vector-16.svg";
+import vector17 from "./vector-17.svg";
+import vector18 from "./vector-18.svg";
+import vector19 from "./vector-19.svg";
+import vector20 from "./vector-20.svg";
 
-<body>
+export const Desktop = (): JSX.Element => {
+  const emotionCards = [
+    {
+      number: "01",
+      title: "Радость",
+      description:
+        "Положительное эмоциональное состояние, связанное с удовлетворённостью, интересом и вовлечённостью.\nРадость отражает комфортную атмосферу, мотивацию к обучению и общее ощущение благополучия.",
+      subtractSrc: subtract,
+      numberTop: "1136px",
+      numberLeft: "44px",
+      titleTop: "1197px",
+      titleLeft: "44px",
+      descTop: "1264px",
+      descLeft: "39px",
+      vectorSrc: null,
+      vectorTop: null,
+      vectorLeft: null,
+      vectorWidth: null,
+      vectorHeight: null,
+    },
+    {
+      number: "02",
+      title: "Спокойствие",
+      description:
+        "Стабильное и уравновешенное состояние без выраженного стресса или напряжения.\n Спокойствие говорит о внутреннем балансе и способности сосредоточиться на задачах без давления.",
+      subtractSrc: subtract3,
+      numberTop: "1136px",
+      numberLeft: "520px",
+      titleTop: "1205px",
+      titleLeft: "515px",
+      descTop: "1273px",
+      descLeft: "511px",
+      vectorSrc: vector32,
+      vectorTop: "1067px",
+      vectorLeft: "932px",
+      vectorWidth: "351px",
+      vectorHeight: "262px",
+    },
+    {
+      number: "03",
+      title: "Грусть",
+      description:
+        "Эмоция, связанная с усталостью, снижением настроения или внутренним дискомфортом.\n Может возникать из-за учебной нагрузки, личных переживаний или эмоционального выгорания.",
+      subtractSrc: subtract2,
+      numberTop: "1466px",
+      numberLeft: "520px",
+      titleTop: "1534px",
+      titleLeft: "520px",
+      descTop: "1601px",
+      descLeft: "516px",
+      vectorSrc: vector52,
+      vectorTop: "1470px",
+      vectorLeft: "108px",
+      vectorWidth: "316px",
+      vectorHeight: "151px",
+    },
+    {
+      number: "04",
+      title: "Гнев",
+      description:
+        "Состояние раздражения и напряжения, возникающее в ответ на стресс или неудовлетворённость.\n Гнев может указывать на перегрузку, конфликтные ситуации или высокий уровень давления.",
+      subtractSrc: subtract4,
+      numberTop: "1466px",
+      numberLeft: "988px",
+      titleTop: "1534px",
+      titleLeft: "992px",
+      descTop: "1601px",
+      descLeft: "988px",
+      vectorSrc: vector62,
+      vectorTop: "1552px",
+      vectorLeft: "361px",
+      vectorWidth: "71px",
+      vectorHeight: "65px",
+    },
+  ];
 
-  <div class="container">
+  const subtractPositions = [
+    { src: subtract, top: "1122px", left: "26px" },
+    { src: subtract2, top: "1457px", left: "497px" },
+    { src: subtract3, top: "1122px", left: "497px" },
+    { src: subtract4, top: "1457px", left: "968px" },
+  ];
 
-    <h1>Анонимная статистика эмоций 📊</h1>
+  const statsData = [
+    {
+      label: "Радость",
+      percent: "42%",
+      labelLeft: "26px",
+      percentLeft: "331px",
+      barLeft: "26px",
+      barWidth: "688px",
+      color: "#ffc93c",
+    },
+    {
+      label: "Спокойствие",
+      percent: "28%",
+      labelLeft: "720px",
+      percentLeft: "890px",
+      barLeft: "714px",
+      barWidth: "381px",
+      color: "#4ecdc4",
+    },
+    {
+      label: "Грусть",
+      percent: "18%",
+      labelLeft: "1095px",
+      percentLeft: "1174px",
+      barLeft: "1095px",
+      barWidth: "202px",
+      color: "#5c7cfa",
+    },
+    {
+      label: "Гнев",
+      percent: "12%",
+      labelLeft: "1297px",
+      percentLeft: "1328px",
+      barLeft: "1297px",
+      barWidth: "118px",
+      color: "#e63946",
+    },
+  ];
 
-    <div class="buttons">
-      <button onclick="vote('joy')">Радость</button>
-      <button onclick="vote('calm')">Спокойствие</button>
-      <button onclick="vote('sad')">Грусть</button>
-      <button onclick="vote('anger')">Гнев</button>
+  return (
+    <div className="bg-[#1d1d1d] w-full min-w-[1440px] h-[2678px] relative">
+      <img
+        className="absolute w-full h-[67.23%] top-[32.77%] left-0"
+        alt="Vector"
+        src={vector8}
+      />
+      <img
+        className="absolute w-[45.73%] h-[93.93%] top-[6.07%] left-[54.27%]"
+        alt="Vector"
+        src={vector9}
+      />
+      <img
+        className="absolute w-full h-full top-0 left-0"
+        alt="Vector"
+        src={vector10}
+      />
+      <div className="absolute top-[161px] left-[26px] w-[1389px] h-[543px] bg-[#e1e1e1] rounded-[0px_31.16px_0px_31.16px]" />
+      <img
+        className="absolute top-[758px] left-0 w-[826px] h-72"
+        alt="Vector"
+        src={vector2}
+      />
+      <div className="absolute w-[31.01%] h-[17.96%] top-[9.16%] left-[4.48%]">
+        <img
+          className="absolute w-[93.29%] h-[39.62%] top-[60.38%] left-[6.71%]"
+          alt="Vector"
+          src={vector}
+        />
+        <img
+          className="absolute w-[42.89%] h-[77.37%] top-[22.63%] left-[57.11%]"
+          alt="Vector"
+          src={vector3}
+        />
+        <img
+          className="absolute w-[91.89%] h-[92.98%] top-[7.02%] left-[8.11%]"
+          alt="Vector"
+          src={vector4}
+        />
+      </div>
+      <div className="absolute top-[190px] left-[83px] [font-family:'Zen_Dots-Regular',Helvetica] font-normal text-[#1d1d1d] text-[76.3px] tracking-[0] leading-[normal]">
+        TALDYKORGAN HIGH <br />
+        POLYTECH COLLEGE
+      </div>
+      <p className="absolute top-[414px] left-[86px] w-[874px] [font-family:'Montserrat-ExtraBold',Helvetica] font-extrabold text-[#8d58fe] text-[29.3px] tracking-[0] leading-[normal]">
+        Анонимная статистика эмоционального состояния студентов на основе
+        оффлайн-опроса
+      </p>
+      <img
+        className="absolute top-[85px] left-[26px] w-[522px] h-[76px]"
+        alt="Rectangle"
+        src={rectangle4}
+      />
+      <img
+        className="absolute top-[704px] left-[1005px] w-[410px] h-[60px]"
+        alt="Rectangle"
+        src={rectangle5}
+      />
+      <img
+        className="absolute top-[77px] left-[1140px] w-[282px] h-[282px]"
+        alt="Star"
+        src={star1}
+      />
+      <div className="absolute top-[179px] left-[1223px] rotate-[25.06deg] [font-family:'Montserrat-ExtraBold',Helvetica] font-extrabold text-white text-[68.6px] tracking-[0] leading-[normal]">
+        ПН
+      </div>
+      <img
+        className="absolute w-[34.60%] h-[79.97%] top-[20.03%] left-[65.40%]"
+        alt="Vector"
+        src={vector5}
+      />
+      <img
+        className="absolute top-[490px] left-[347px] w-[849px] h-[426px]"
+        alt="Vector"
+        src={vector1}
+      />
+      <div className="absolute top-[806px] left-[1154px] w-[260px] h-[260px] bg-[#ccec43] rounded-[15px]" />
+      <div className="absolute top-[1803px] left-[1154px] w-[260px] h-[57px] bg-[#ccec43] rounded-[15px]" />
+      <img
+        className="absolute w-[17.14%] h-[79.17%] top-[20.83%] left-[82.86%]"
+        alt="Vector"
+        src={vector6}
+      />
+      <img
+        className="absolute w-[24.12%] h-[86.93%] top-[13.07%] left-[75.88%]"
+        alt="Vector"
+        src={vector7}
+      />
+      <div className="absolute top-[716px] left-[1126px] w-40 [font-family:'Montserrat-Bold',Helvetica] font-bold text-black text-[18.8px] tracking-[0] leading-[normal]">
+        Сайт колледжа
+      </div>
+      <p className="absolute top-[104px] left-[82px] w-[196px] [font-family:'Montserrat-Bold',Helvetica] font-bold text-black text-[18.8px] tracking-[0] leading-[normal]">
+        Подпишись на нас <br />в инстаграм
+      </p>
+      <div className="absolute top-[85px] left-[560px] w-[139px] h-[46px]">
+        <div className="absolute top-0 left-0 w-[137px] h-[46px] bg-[#e1e1e1] rounded-[22.5px]" />
+        <div className="absolute top-2.5 left-[19px] [font-family:'Montserrat-Bold',Helvetica] font-bold text-[#1d1d1d] text-[22.8px] tracking-[0] leading-[normal]">
+          Главная
+        </div>
+      </div>
+      <div className="absolute top-[85px] left-[730px] w-44 h-[46px]">
+        <div className="absolute top-0 left-0 w-[174px] h-[46px] bg-[#e1e1e1] rounded-[22.5px]" />
+        <div className="absolute top-[9px] left-4 [font-family:'Montserrat-Bold',Helvetica] font-bold text-[#1d1d1d] text-[22.8px] tracking-[0] leading-[normal]">
+          Статистика
+        </div>
+      </div>
+      <div className="absolute top-[105px] left-[286px] w-11 h-11">
+        <div className="absolute w-[42px] h-[42px] top-0.5 left-0 bg-[#8f57ff] rounded-[7.5px]" />
+        <div className="absolute top-0.5 left-[11px] w-[19px] rotate-[-29.56deg] [font-family:'Montserrat-Bold',Helvetica] font-bold text-black text-[31.2px] tracking-[0] leading-[normal]">
+          →
+        </div>
+      </div>
+      {subtractPositions.map((item, index) => (
+        <img
+          key={index}
+          className="absolute w-[446px] h-[310px]"
+          style={{ top: item.top, left: item.left }}
+          alt="Subtract"
+          src={item.src}
+        />
+      ))}
+
+      {emotionCards.map((card, index) => (
+        <div key={index}>
+          <div
+            className="absolute [font-family:'Zen_Dots-Regular',Helvetica] font-normal text-[#00000080] text-[53.9px] tracking-[0] leading-[normal]"
+            style={{ top: card.numberTop, left: card.numberLeft }}
+          >
+            {card.number}
+          </div>
+          <div
+            className="absolute [font-family:'Montserrat-SemiBoldItalic',Helvetica] font-semibold italic text-[#1d1d1d] text-[44.1px] tracking-[0] leading-[normal]"
+            style={{ top: card.titleTop, left: card.titleLeft }}
+          >
+            {card.title}
+          </div>
+          <p
+            className="absolute w-[418px] [font-family:'Montserrat-Regular',Helvetica] font-normal text-black text-[13.2px] tracking-[0] leading-[normal]"
+            style={{ top: card.descTop, left: card.descLeft }}
+          >
+            {card.description.split("\n").map((line, i) => (
+              <span key={i}>
+                {line}
+                {i < card.description.split("\n").length - 1 && <br />}
+              </span>
+            ))}
+          </p>
+          {card.vectorSrc && (
+            <img
+              className="absolute"
+              style={{
+                top: card.vectorTop!,
+                left: card.vectorLeft!,
+                width: card.vectorWidth!,
+                height: card.vectorHeight!,
+              }}
+              alt="Vector"
+              src={card.vectorSrc}
+            />
+          )}
+        </div>
+      ))}
+
+      <img
+        className="absolute top-[1289px] left-[1034px] w-[72px] h-[71px]"
+        alt="Vector"
+        src={vector42}
+      />
+      <p className="absolute top-[1011px] left-[505px] [font-family:'Zen_Dots-Regular',Helvetica] font-normal text-[#d9d9d9] text-[53.9px] tracking-[0] leading-[53.9px]">
+        <span className="leading-[34.7px]">
+          отметь свое
+          <br />
+        </span>
+        <span className="text-[63.6px] leading-[41.0px]">настроние</span>
+      </p>
+      <div className="absolute top-[2156px] left-[514px] [font-family:'Zen_Dots-Regular',Helvetica] font-normal text-[#d9d9d9] text-[63.6px] tracking-[0] leading-[41.0px] whitespace-nowrap">
+        статистика
+      </div>
+      <div className="absolute top-[2243px] left-[26px] w-[1389px] h-[213px] bg-[#ffc93c]" />
+      <div className="absolute top-[2243px] left-[714px] w-[700px] h-[213px] bg-[#4ecdc4]" />
+      <div className="absolute top-[2243px] left-[1095px] w-80 h-[213px] bg-[#5c7cfa]" />
+      <div className="absolute top-[2243px] left-[1297px] w-[118px] h-[213px] bg-[#e63946]" />
+      {statsData.map((stat, index) => (
+        <div key={index}>
+          <div
+            className="absolute h-[35px] flex items-start"
+            style={{ top: "2332px", left: stat.percentLeft }}
+          >
+            <div className="[font-family:'Montserrat-ExtraBold',Helvetica] font-extrabold text-[#1d1d1d] text-[28.5px] tracking-[0] leading-[normal]">
+              {stat.percent}
+            </div>
+          </div>
+          <div
+            className="absolute [font-family:'Montserrat-ExtraBold',Helvetica] font-extrabold text-[#8f57ff] text-[28.5px] tracking-[0] leading-[normal]"
+            style={{ top: "2481px", left: stat.labelLeft }}
+          >
+            {stat.label}
+          </div>
+        </div>
+      ))}
+
+      <p className="absolute top-[2589px] left-[219px] [font-family:'Montserrat-Regular',Helvetica] font-normal text-[#d9d9d9] text-[28.5px] text-center tracking-[0] leading-[normal]">
+        Система не собирает личные данные, имена или идентификаторы.
+        <br /> Отображается только обобщённая статистика настроений.
+      </p>
+      <div className="absolute top-[1814px] left-[1171px] w-56 h-[35px] flex">
+        <div className="w-[222px] h-[35px] [font-family:'Montserrat-ExtraBold',Helvetica] font-extrabold text-black text-[28.5px] tracking-[0] leading-[normal]">
+          Индекс 7.1 / 10
+        </div>
+      </div>
+      <img
+        className="absolute top-[1912px] left-[338px] w-[579px] h-6"
+        alt="Vector"
+        src={vector92}
+      />
+      <img
+        className="absolute top-[1821px] left-[1114px] w-[101px] h-[82px]"
+        alt="Vector"
+        src={vector102}
+      />
+      <p className="absolute top-[1839px] left-[26px] [font-family:'Montserrat-ExtraBold',Helvetica] font-normal text-[#d9d9d9] text-[20.3px] tracking-[0] leading-[normal]">
+        <span className="font-extrabold">
+          КАК СОБИРАЮТСЯ ДАННЫЕ?
+          <br />
+        </span>
+        <span className="[font-family:'Montserrat-SemiBold',Helvetica] font-semibold">
+          Опрос проходит через оффлайн-точки внутри колледжа (планшеты / QR /
+          кнопки). Каждый участник выбирает своё текущее настроение одним
+          нажатием.
+        </span>
+      </p>
+      <p className="absolute top-[1976px] left-[26px] [font-family:'Montserrat-ExtraBold',Helvetica] font-normal text-[#d9d9d9] text-[20.3px] tracking-[0] leading-[normal]">
+        <span className="font-extrabold">
+          Почему это важно?
+          <br />
+        </span>
+        <span className="[font-family:'Montserrat-SemiBold',Helvetica] font-semibold">
+          Понимание общего настроения помогает создавать более комфортную и
+          продуктивную среду для обучения. Даже простая обратная связь может
+          влиять на улучшение атмосферы.
+        </span>
+      </p>
+      <img
+        className="absolute top-[1812px] left-[1344px] w-24 h-[83px]"
+        alt="Vector"
+        src={vector11}
+      />
+      <img
+        className="absolute top-[2050px] left-[486px] w-[792px] h-[54px]"
+        alt="Vector"
+        src={vector12}
+      />
+      <div className="absolute top-[1843px] left-[964px] w-[97px] h-[99px] rotate-[-50.04deg]">
+        <img
+          className="absolute top-6 left-px w-[98px] h-14 rotate-[50.04deg]"
+          alt="Vector"
+          src={vector13}
+        />
+        <img
+          className="absolute top-[13px] left-1.5 w-[76px] h-[91px] rotate-[50.04deg]"
+          alt="Vector"
+          src={vector14}
+        />
+        <img
+          className="absolute top-[18px] left-5 w-[83px] h-[58px] rotate-[50.04deg]"
+          alt="Vector"
+          src={vector15}
+        />
+      </div>
+      <div className="absolute top-[1679px] left-[76px] w-[49px] h-[50px] rotate-[27.44deg]">
+        <img
+          className="absolute top-1 left-1.5 w-[37px] h-12 rotate-[-27.44deg]"
+          alt="Vector"
+          src={image}
+        />
+        <img
+          className="absolute top-1.5 left-[-3px] w-[47px] h-[41px] rotate-[-27.44deg]"
+          alt="Vector"
+          src={vector142}
+        />
+        <img
+          className="absolute top-px left-[19px] w-6 h-[47px] rotate-[-27.44deg]"
+          alt="Vector"
+          src={vector152}
+        />
+      </div>
+      <div className="absolute top-[63px] left-[1012px] w-[71px] h-[73px] rotate-[24.98deg]">
+        <img
+          className="absolute -top-1.5 left-px w-11 h-[73px] rotate-[-24.98deg]"
+          alt="Vector"
+          src={vector16}
+        />
+        <img
+          className="absolute top-1.5 left-0 w-[78px] h-14 rotate-[-24.98deg]"
+          alt="Vector"
+          src={vector17}
+        />
+        <img
+          className="absolute top-[18px] left-14 w-[11px] h-2.5 rotate-[-24.98deg]"
+          alt="Vector"
+          src={vector18}
+        />
+        <img
+          className="absolute top-[34px] left-[38px] w-6 h-[9px] rotate-[-24.98deg]"
+          alt="Vector"
+          src={vector19}
+        />
+      </div>
+      <img
+        className="absolute top-[724px] left-[1306px] w-[84px] h-[79px]"
+        alt="Vector"
+        src={vector20}
+      />
+      <img
+        className="absolute w-[207px] h-[207px] top-[833px] left-[1181px]"
+        alt="Group"
+        src={group30}
+      />
     </div>
-
-    <div class="chart">
-
-      <div class="bar">
-        <span>Радость</span>
-        <div class="line"><div id="joyBar"></div></div>
-        <span id="joyText">0%</span>
-      </div>
-
-      <div class="bar">
-        <span>Спокойствие</span>
-        <div class="line"><div id="calmBar"></div></div>
-        <span id="calmText">0%</span>
-      </div>
-
-      <div class="bar">
-        <span>Грусть</span>
-        <div class="line"><div id="sadBar"></div></div>
-        <span id="sadText">0%</span>
-      </div>
-
-      <div class="bar">
-        <span>Гнев</span>
-        <div class="line"><div id="angerBar"></div></div>
-        <span id="angerText">0%</span>
-      </div>
-
-    </div>
-
-    <a class="insta" href="https://instagram.com" target="_blank">
-      Instagram
-    </a>
-
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  );
+};
