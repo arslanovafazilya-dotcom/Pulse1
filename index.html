@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Emotion Stats</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js"></script>
+</head>
+<body>
+
+<header>
+  <a href="https://www.instagram.com/tvptk_tdk/" target="_blank" class="insta">
+    Подпишись на нас →
+  </a>
+  <div class="day" id="day"></div>
+</header>
+
+<section class="hero">
+  <h1>Taldykorgan High Polytech College</h1>
+  <p>Анонимная статистика эмоций студентов</p>
+</section>
+
+<section class="buttons">
+  <button class="card joy" onclick="vote('joy')">Радость</button>
+  <button class="card calm" onclick="vote('calm')">Спокойствие</button>
+  <button class="card sad" onclick="vote('sad')">Грусть</button>
+  <button class="card anger" onclick="vote('anger')">Гнев</button>
+</section>
+
+<section class="chart">
+  <div class="bar joy" id="joyBar"></div>
+  <div class="bar calm" id="calmBar"></div>
+  <div class="bar sad" id="sadBar"></div>
+  <div class="bar anger" id="angerBar"></div>
+</section>
+
+<section class="stats" id="stats"></section>
+
+<script src="script.js"></script>
+</body>
+</html>
