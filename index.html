@@ -1,44 +1,59 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Emotion Stats</title>
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js"></script>
+  <link rel="stylesheet" href="style.css"/>
 </head>
+
 <body>
 
-<header>
-  <a href="https://www.instagram.com/tvptk_tdk/" target="_blank" class="insta">
-    Подпишись на нас →
-  </a>
-  <div class="day" id="day"></div>
-</header>
+  <div class="container">
 
-<section class="hero">
-  <h1>Taldykorgan High Polytech College</h1>
-  <p>Анонимная статистика эмоций студентов</p>
-</section>
+    <h1>Анонимная статистика эмоций 📊</h1>
 
-<section class="buttons">
-  <button class="card joy" onclick="vote('joy')">Радость</button>
-  <button class="card calm" onclick="vote('calm')">Спокойствие</button>
-  <button class="card sad" onclick="vote('sad')">Грусть</button>
-  <button class="card anger" onclick="vote('anger')">Гнев</button>
-</section>
+    <div class="buttons">
+      <button onclick="vote('joy')">Радость</button>
+      <button onclick="vote('calm')">Спокойствие</button>
+      <button onclick="vote('sad')">Грусть</button>
+      <button onclick="vote('anger')">Гнев</button>
+    </div>
 
-<section class="chart">
-  <div class="bar joy" id="joyBar"></div>
-  <div class="bar calm" id="calmBar"></div>
-  <div class="bar sad" id="sadBar"></div>
-  <div class="bar anger" id="angerBar"></div>
-</section>
+    <div class="chart">
 
-<section class="stats" id="stats"></section>
+      <div class="bar">
+        <span>Радость</span>
+        <div class="line"><div id="joyBar"></div></div>
+        <span id="joyText">0%</span>
+      </div>
 
-<script src="script.js"></script>
+      <div class="bar">
+        <span>Спокойствие</span>
+        <div class="line"><div id="calmBar"></div></div>
+        <span id="calmText">0%</span>
+      </div>
+
+      <div class="bar">
+        <span>Грусть</span>
+        <div class="line"><div id="sadBar"></div></div>
+        <span id="sadText">0%</span>
+      </div>
+
+      <div class="bar">
+        <span>Гнев</span>
+        <div class="line"><div id="angerBar"></div></div>
+        <span id="angerText">0%</span>
+      </div>
+
+    </div>
+
+    <a class="insta" href="https://instagram.com" target="_blank">
+      Instagram
+    </a>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
